@@ -19,6 +19,11 @@ module Pdman
       request_specs: false
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
     end
+
+    config.autoload_paths += %W(
+      #{config.root}/lib
+    )
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
