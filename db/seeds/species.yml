@@ -1,0 +1,193 @@
+---
+- !ruby/object:Species
+  concise_attributes:
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: id
+    value_before_type_cast: 1
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: name
+    value_before_type_cast: 神
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: created_at
+    value_before_type_cast: '2017-09-17 11:08:24.624387'
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: updated_at
+    value_before_type_cast: '2017-09-17 11:08:24.624387'
+  new_record: false
+  active_record_yaml_version: 2
+- !ruby/object:Species
+  concise_attributes:
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: id
+    value_before_type_cast: 2
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: name
+    value_before_type_cast: ドラゴン
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: created_at
+    value_before_type_cast: '2017-09-17 11:08:31.108738'
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: updated_at
+    value_before_type_cast: '2017-09-17 11:08:31.108738'
+  new_record: false
+  active_record_yaml_version: 2
+- !ruby/object:Species
+  concise_attributes:
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: id
+    value_before_type_cast: 3
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: name
+    value_before_type_cast: 悪魔
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: created_at
+    value_before_type_cast: '2017-09-17 11:08:36.749694'
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: updated_at
+    value_before_type_cast: '2017-09-17 11:08:36.749694'
+  new_record: false
+  active_record_yaml_version: 2
+- !ruby/object:Species
+  concise_attributes:
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: id
+    value_before_type_cast: 4
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: name
+    value_before_type_cast: マシン
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: created_at
+    value_before_type_cast: '2017-09-17 11:08:41.567558'
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: updated_at
+    value_before_type_cast: '2017-09-17 11:08:41.567558'
+  new_record: false
+  active_record_yaml_version: 2
+- !ruby/object:Species
+  concise_attributes:
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: id
+    value_before_type_cast: 5
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: name
+    value_before_type_cast: バランス
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: created_at
+    value_before_type_cast: '2017-09-17 11:08:44.748365'
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: updated_at
+    value_before_type_cast: '2017-09-17 11:08:44.748365'
+  new_record: false
+  active_record_yaml_version: 2
+- !ruby/object:Species
+  concise_attributes:
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: id
+    value_before_type_cast: 6
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: name
+    value_before_type_cast: 攻撃
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: created_at
+    value_before_type_cast: '2017-09-17 11:09:32.790441'
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: updated_at
+    value_before_type_cast: '2017-09-17 11:09:32.790441'
+  new_record: false
+  active_record_yaml_version: 2
+- !ruby/object:Species
+  concise_attributes:
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: id
+    value_before_type_cast: 7
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: name
+    value_before_type_cast: 体力
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: created_at
+    value_before_type_cast: '2017-09-17 11:09:41.243879'
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: updated_at
+    value_before_type_cast: '2017-09-17 11:09:41.243879'
+  new_record: false
+  active_record_yaml_version: 2
+- !ruby/object:Species
+  concise_attributes:
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: id
+    value_before_type_cast: 8
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: name
+    value_before_type_cast: 回復
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: created_at
+    value_before_type_cast: '2017-09-17 11:09:50.162666'
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: updated_at
+    value_before_type_cast: '2017-09-17 11:09:50.162666'
+  new_record: false
+  active_record_yaml_version: 2
+- !ruby/object:Species
+  concise_attributes:
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: id
+    value_before_type_cast: 9
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: name
+    value_before_type_cast: 進化
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: created_at
+    value_before_type_cast: '2017-09-17 11:09:58.816387'
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: updated_at
+    value_before_type_cast: '2017-09-17 11:09:58.816387'
+  new_record: false
+  active_record_yaml_version: 2
+- !ruby/object:Species
+  concise_attributes:
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: id
+    value_before_type_cast: 10
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: name
+    value_before_type_cast: 覚醒
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: created_at
+    value_before_type_cast: '2017-09-17 11:10:07.940175'
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: updated_at
+    value_before_type_cast: '2017-09-17 11:10:07.940175'
+  new_record: false
+  active_record_yaml_version: 2
+- !ruby/object:Species
+  concise_attributes:
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: id
+    value_before_type_cast: 11
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: name
+    value_before_type_cast: 強化合成用
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: created_at
+    value_before_type_cast: '2017-09-17 11:10:15.660043'
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: updated_at
+    value_before_type_cast: '2017-09-17 11:10:15.660043'
+  new_record: false
+  active_record_yaml_version: 2
+- !ruby/object:Species
+  concise_attributes:
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: id
+    value_before_type_cast: 12
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: name
+    value_before_type_cast: 売却用
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: created_at
+    value_before_type_cast: '2017-09-17 11:10:29.937250'
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: updated_at
+    value_before_type_cast: '2017-09-17 11:10:29.937250'
+  new_record: false
+  active_record_yaml_version: 2

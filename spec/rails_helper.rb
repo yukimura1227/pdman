@@ -58,7 +58,7 @@ RSpec.configure do |config|
         uncommitted transaction data setup over the spec's database connection.
       MSG
     end
-    DatabaseCleaner.clean_with :truncation, except: %w(attributes)
+    DatabaseCleaner.clean_with :truncation, except: %w(attributes species)
   end
 
   config.before(:each) do
