@@ -1,0 +1,6 @@
+coverage:
+  notify:
+    slack:
+      default:
+        url: "secret:u/G2+5Z/KRZAn+LLKlI4CPoYPt7ULK+Cs2J/A3dq0XMSj2xmHFVGtCg8R99ZKvpHmeX+lLZfnZqIc5P0ZNqF0pEnShM9/EVyO45lc1WFZe2OUj9EBK+CHKMS2/sKSr3XDs7mB231wYVmbK25R3RgIqeAcVdsTbh6FwjsONC2HXI="
+        threshold: 0.0%
