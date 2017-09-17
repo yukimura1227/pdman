@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 20170917064325) do
 
   create_table "monsters", force: :cascade do |t|
     t.integer "uid", null: false
-    t.integer "attribute_id", null: false
-    t.integer "sub_attribute_id"
+    t.integer "element_id", null: false
+    t.integer "sub_element_id"
     t.integer "monster_species_id", null: false
     t.integer "skill_id"
     t.datetime "created_at", null: false
