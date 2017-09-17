@@ -86,4 +86,5 @@ group :test do
   gem 'faker'
   gem 'database_cleaner'
   gem 'timecop'
+  gem 'codecov', require: false, group: :test
 end
