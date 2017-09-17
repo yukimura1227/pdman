@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Attribute, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'recrods size' do
+    it 'is 5(火,水,木,光,闇)' do
+      expect(Attribute.pluck(:name)).to contain_exactly('火', '水', '木', '光', '闇')
+    end
+  end
 end

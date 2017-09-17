@@ -43,6 +43,9 @@ RSpec.configure do |config|
   Capybara.javascript_driver = :selenium
   # setting for database_cleaner
   config.before(:suite) do
+    # load seeds
+    load Rails.root.join('db', 'seeds.rb')
+
     if config.use_transactional_fixtures?
       raise(<<-MSG)
         Delete line `config.use_transactional_fixtures = true` from rails_helper.rb
@@ -55,7 +58,7 @@ RSpec.configure do |config|
         uncommitted transaction data setup over the spec's database connection.
       MSG
     end
-    DatabaseCleaner.clean_with(:truncation)
+    DatabaseCleaner.clean_with :truncation, except: %w(attributes)
   end
 
   config.before(:each) do
