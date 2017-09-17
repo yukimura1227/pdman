@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
@@ -61,31 +60,31 @@ gem 'twitter-bootstrap-rails'
 gem 'draper', '>= 3.0.0.pre1'
 gem 'font-awesome-rails'
 group :development, :test do
-  gem 'pry-rails'
-  gem 'pry-doc'
-  gem 'pry-byebug'
+  gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'awesome_print'
-  gem 'rspec-rails'
-  gem 'rails-controller-testing'
   gem 'factory_girl_rails'
   gem 'guard-rspec', require: false
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-rails'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
 end
 
 group :development do
+  gem 'bullet'
   gem 'erb2haml'
   gem 'hirb'
   gem 'hirb-unicode'
   gem 'pry-coolline'
   gem 'rubocop', require: false
   gem 'view_source_map'
-  gem 'bullet'
 end
 
 group :test do
-  gem 'faker'
-  gem 'database_cleaner'
-  gem 'timecop'
   gem 'codecov', require: false, group: :test
+  gem 'database_cleaner'
+  gem 'faker'
+  gem 'timecop'
 end
