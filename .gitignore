@@ -24,3 +24,5 @@
 
 /coverage/*
 !/coverage/.keep
+
+*.swp
