@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20170917064325) do
 
   create_table "monsters", force: :cascade do |t|
     t.integer "uid", null: false
+    t.string "name", null: false
     t.integer "element_id", null: false
     t.integer "sub_element_id"
     t.integer "monster_species_id", null: false
