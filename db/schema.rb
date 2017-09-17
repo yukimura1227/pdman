@@ -34,11 +34,11 @@ ActiveRecord::Schema.define(version: 20170917064325) do
   end
 
   create_table "monster_species", force: :cascade do |t|
-    t.integer "monster_id_id"
+    t.integer "monster_id"
     t.integer "species_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["monster_id_id"], name: "index_monster_species_on_monster_id_id"
+    t.index ["monster_id"], name: "index_monster_species_on_monster_id"
     t.index ["species_id"], name: "index_monster_species_on_species_id"
   end
 

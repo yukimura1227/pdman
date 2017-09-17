@@ -1,4 +1,4 @@
 class MonsterSpecy < ApplicationRecord
-  belongs_to :monster_id
+  belongs_to :monster
   belongs_to :species
 end
