@@ -59,6 +59,7 @@ gem 'less-rails', git: 'https://github.com/MustafaZain/less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'draper', '>= 3.0.0.pre1'
 gem 'font-awesome-rails'
+gem 'nokogiri'
 group :development, :test do
   gem 'awesome_print'
   gem 'better_errors'
