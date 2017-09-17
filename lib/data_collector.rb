@@ -13,7 +13,23 @@ class DataCollector
     end
     doc.xpath("//ul[contains(@class,'list-box')]").each do |node|
       node.xpath('li//a').each do |a_tag_node|
-        puts "遷移先： #{a_tag_node[:href]} リンク名: #{a_tag_node.inner_html}"
+        monster_no   = a_tag_node.xpath("div[contains(@class,'num')]").first.inner_html.sub('No.', '')
+        monster_name = a_tag_node.xpath("div[contains(@class,'name')]").first.inner_html
+        puts "遷移先： #{a_tag_node[:href]} モンスターNo: #{monster_no} 名前: #{monster_name}"
+        unless Monster.find_by(uid: monster_no)
+          # TODO: dummy skill (remove!!!)
+          Skill.first_or_create!(id: 1, name: :hoge)
+          # TODO: element and species is dummy!!!!
+          m = Monster.new(
+            uid: monster_no,
+            name: monster_name,
+            skill_id: 1,
+            element_id: 1,
+            sub_element_id: 2,
+            monster_species_id: 1
+          )
+          m.save!
+        end
       end
     end
   end
