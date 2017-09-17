@@ -18,8 +18,6 @@ class DataCollector
     end
   end
 
-  private
-
   def self.extract_html_and_charset(url)
     charset = nil
     html = open(url) do |f|
@@ -28,4 +26,5 @@ class DataCollector
     end
     [html, charset]
   end
+  private_class_method :extract_html_and_charset
 end
