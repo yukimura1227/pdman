@@ -1,0 +1,81 @@
+---
+- !ruby/object:Attribute
+  concise_attributes:
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: id
+    value_before_type_cast: 1
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: name
+    value_before_type_cast: 火
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: created_at
+    value_before_type_cast: '2017-09-17 09:04:26.072779'
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: updated_at
+    value_before_type_cast: '2017-09-17 09:04:26.072779'
+  new_record: false
+  active_record_yaml_version: 2
+- !ruby/object:Attribute
+  concise_attributes:
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: id
+    value_before_type_cast: 2
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: name
+    value_before_type_cast: 水
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: created_at
+    value_before_type_cast: '2017-09-17 09:04:32.341004'
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: updated_at
+    value_before_type_cast: '2017-09-17 09:04:32.341004'
+  new_record: false
+  active_record_yaml_version: 2
+- !ruby/object:Attribute
+  concise_attributes:
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: id
+    value_before_type_cast: 3
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: name
+    value_before_type_cast: 木
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: created_at
+    value_before_type_cast: '2017-09-17 09:04:38.825972'
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: updated_at
+    value_before_type_cast: '2017-09-17 09:04:38.825972'
+  new_record: false
+  active_record_yaml_version: 2
+- !ruby/object:Attribute
+  concise_attributes:
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: id
+    value_before_type_cast: 4
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: name
+    value_before_type_cast: 光
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: created_at
+    value_before_type_cast: '2017-09-17 09:04:42.846158'
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: updated_at
+    value_before_type_cast: '2017-09-17 09:04:42.846158'
+  new_record: false
+  active_record_yaml_version: 2
+- !ruby/object:Attribute
+  concise_attributes:
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: id
+    value_before_type_cast: 5
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: name
+    value_before_type_cast: 闇
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: created_at
+    value_before_type_cast: '2017-09-17 09:04:47.678849'
+  - !ruby/object:ActiveRecord::Attribute::FromDatabase
+    name: updated_at
+    value_before_type_cast: '2017-09-17 09:04:47.678849'
+  new_record: false
+  active_record_yaml_version: 2
