@@ -6,11 +6,7 @@ class DataCollector
     html, charset = extract_html_and_charset(url)
 
     doc = Nokogiri::HTML.parse(html, nil, charset)
-    doc.xpath("//ul[contains(@class,'list-round-rect')]").each do |node|
-      node.xpath('li//a').each do |a_tag_node|
-        puts "遷移先： #{a_tag_node[:href]} リンク名: #{a_tag_node.inner_html}"
-      end
-    end
+    extract_monster_list_pages(doc)
     doc.xpath("//ul[contains(@class,'list-box')]").each do |node|
       node.xpath('li//a').each do |a_tag_node|
         monster_no   = a_tag_node.xpath("div[contains(@class,'num')]").first.inner_html.sub('No.', '')
@@ -43,4 +39,13 @@ class DataCollector
     [html, charset]
   end
   private_class_method :extract_html_and_charset
+
+  def self.extract_monster_list_pages(doc)
+    doc.xpath("//ul[contains(@class,'list-round-rect')]").each do |node|
+      node.xpath('li//a').each do |a_tag_node|
+        puts "遷移先： #{a_tag_node[:href]} リンク名: #{a_tag_node.inner_html}"
+      end
+    end
+  end
+  private_class_method :extract_monster_list_pages
 end
