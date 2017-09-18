@@ -1,0 +1,2 @@
+class MonsterListPage < ScrapingTarget
+end

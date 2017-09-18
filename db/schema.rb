@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170917064325) do
+ActiveRecord::Schema.define(version: 20170918012459) do
 
   create_table "attributes", force: :cascade do |t|
     t.string "name"
@@ -52,6 +52,18 @@ ActiveRecord::Schema.define(version: 20170917064325) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["skill_id"], name: "index_monsters_on_skill_id"
+  end
+
+  create_table "scraping_targets", force: :cascade do |t|
+    t.string "type", null: false
+    t.string "url", null: false
+    t.string "link_name"
+    t.datetime "last_scraping_at", null: false
+    t.boolean "is_success_last"
+    t.text "log_message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["url"], name: "index_scraping_targets_on_url"
   end
 
   create_table "skills", force: :cascade do |t|
