@@ -1,10 +1,14 @@
 class ScrapingTarget
   class MonsterListPage < ScrapingTarget
     def scraping
+      return if last_scraping_at.present? && last_scraping_at > 1.day.ago
+      sleep 1
+      update(last_scraping_at: Time.zone.now, is_success_last: false)
       html, charset = extract_html_and_charset(extract_target_url)
       doc = Nokogiri::HTML.parse(html, nil, charset)
       extract_monster_list_pages(doc)
       extract_monster_pages(doc)
+      update(is_success_last: true)
     end
 
     private
