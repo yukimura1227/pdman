@@ -1,7 +1,7 @@
 class ScrapingTarget
   class MonsterListPage < ScrapingTarget
     def scraping
-      html, charset = extract_html_and_charset('http://pd.appbank.net' + url)
+      html, charset = extract_html_and_charset(extract_target_url)
       doc = Nokogiri::HTML.parse(html, nil, charset)
       extract_monster_list_pages(doc)
       extract_monster_pages(doc)
