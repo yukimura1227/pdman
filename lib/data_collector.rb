@@ -35,15 +35,22 @@ class DataCollector
   def self.extract_monster_pages(doc)
     doc.xpath("//ul[contains(@class,'list-box')]").each do |node|
       node.xpath('li//a').each do |a_tag_node|
-        monster_no   = a_tag_node.xpath("div[contains(@class,'num')]").first.inner_html.sub('No.', '')
-        monster_name = a_tag_node.xpath("div[contains(@class,'name')]").first.inner_html
+        page = ScrapingTarget::MonsterDetailPage.where(
+          url: a_tag_node[:href]
+        ).first_or_create
+        monster_no =
+          a_tag_node.xpath("div[contains(@class,'num')]").first.inner_html
+        monster_no_trim = monster_no.sub('No.', '')
+        monster_name =
+          a_tag_node.xpath("div[contains(@class,'name')]").first.inner_html
+        page.update(link_name: "#{monster_no} #{monster_name}")
         puts "遷移先： #{a_tag_node[:href]} モンスターNo: #{monster_no} 名前: #{monster_name}"
         next if Monster.find_by(uid: monster_no_trim)
         # TODO: dummy skill (remove!!!)
         Skill.first_or_create!(id: 1, name: :hoge)
         # TODO: element and species is dummy!!!!
         m = Monster.new(
-          uid: monster_no,
+          uid: monster_no_trim,
           name: monster_name,
           skill_id: 1,
           element_id: 1,
