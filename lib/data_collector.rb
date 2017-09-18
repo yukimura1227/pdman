@@ -2,11 +2,15 @@ require 'nokogiri'
 require 'open-uri'
 
 class DataCollector
-  def self.sample(url = 'http://pd.appbank.net/ml1')
+  def self.sample(default_url = '/ml1')
+    if ScrapingTarget::MonsterListPage.count.zero?
+      ScrapingTarget::MonsterListPage.where(url: default_url).first_or_create
+    end
+    ScrapingTarget::MonsterListPage.all.each(&:scraping)
+    url = 'http://pd.appbank.net' + default_url
     html, charset = extract_html_and_charset(url)
 
     doc = Nokogiri::HTML.parse(html, nil, charset)
-    extract_monster_list_pages(doc)
     extract_monster_pages(doc)
   end
 
