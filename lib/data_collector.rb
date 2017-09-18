@@ -24,18 +24,6 @@ class DataCollector
   end
   private_class_method :extract_html_and_charset
 
-  def self.extract_monster_list_pages(doc)
-    doc.xpath("//ul[contains(@class,'list-round-rect')]").each do |node|
-      node.xpath('li//a').each do |a_tag_node|
-        page = ScrapingTarget::MonsterListPage.where(
-          url: a_tag_node[:href]
-        ).first_or_create
-        page.update(link_name: a_tag_node.inner_html)
-      end
-    end
-  end
-  private_class_method :extract_monster_list_pages
-
   def self.extract_monster_pages(doc)
     doc.xpath("//ul[contains(@class,'list-box')]").each do |node|
       node.xpath('li//a').each do |a_tag_node|
