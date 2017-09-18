@@ -38,7 +38,7 @@ class DataCollector
         monster_no   = a_tag_node.xpath("div[contains(@class,'num')]").first.inner_html.sub('No.', '')
         monster_name = a_tag_node.xpath("div[contains(@class,'name')]").first.inner_html
         puts "遷移先： #{a_tag_node[:href]} モンスターNo: #{monster_no} 名前: #{monster_name}"
-        skip if Monster.find_by(uid: monster_no)
+        next if Monster.find_by(uid: monster_no_trim)
         # TODO: dummy skill (remove!!!)
         Skill.first_or_create!(id: 1, name: :hoge)
         # TODO: element and species is dummy!!!!
