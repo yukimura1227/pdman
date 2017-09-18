@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20170918012459) do
     t.string "type", null: false
     t.string "url", null: false
     t.string "link_name"
-    t.datetime "last_scraping_at", null: false
+    t.datetime "last_scraping_at"
     t.boolean "is_success_last"
     t.text "log_message"
     t.datetime "created_at", null: false

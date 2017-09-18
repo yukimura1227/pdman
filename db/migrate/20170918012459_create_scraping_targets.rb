@@ -4,7 +4,7 @@ class CreateScrapingTargets < ActiveRecord::Migration[5.1]
       t.string :type, null: false
       t.string :url, null: false, index: true
       t.string :link_name
-      t.datetime :last_scraping_at, null: false
+      t.datetime :last_scraping_at
       t.boolean :is_success_last
       t.text :log_message
 

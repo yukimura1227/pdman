@@ -6,6 +6,7 @@ RSpec.describe DataCollector do
       DataCollector.sample
       expect(Monster.find(10).name).to eq 'ブラッキオ'
       expect(Monster.count).to eq 100
+      expect(ScrapingTarget::MonsterListPage.count).to eq 40
     end
   end
 end

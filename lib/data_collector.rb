@@ -23,7 +23,10 @@ class DataCollector
   def self.extract_monster_list_pages(doc)
     doc.xpath("//ul[contains(@class,'list-round-rect')]").each do |node|
       node.xpath('li//a').each do |a_tag_node|
-        puts "遷移先： #{a_tag_node[:href]} リンク名: #{a_tag_node.inner_html}"
+        page = ScrapingTarget::MonsterListPage.where(
+          url: a_tag_node[:href]
+        ).first_or_create
+        page.update(link_name: a_tag_node.inner_html)
       end
     end
   end
