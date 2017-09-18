@@ -23,7 +23,8 @@ class ScrapingTarget
     def extract_monster_pages(doc)
       doc.xpath("//ul[contains(@class,'list-box')]").each do |node|
         node.xpath('li//a').each do |a_tag_node|
-          monster_no_trim, monster_name = extract_monster_detail_link(a_tag_node)
+          monster_no_trim, monster_name =
+            extract_monster_detail_link(a_tag_node)
           update_monster(monster_no_trim, monster_name)
         end
       end
@@ -34,7 +35,8 @@ class ScrapingTarget
       page = ScrapingTarget::MonsterDetailPage.where(url: href).first_or_create
       monster_no = a_tag.xpath("div[contains(@class,'num')]").first.inner_html
       monster_no_trim = monster_no.sub('No.', '')
-      monster_name = a_tag.xpath("div[contains(@class,'name')]").first.inner_html
+      monster_name =
+        a_tag.xpath("div[contains(@class,'name')]").first.inner_html
       page.update(link_name: "#{monster_no} #{monster_name}")
       puts "遷移先： #{href} モンスターNo: #{monster_no} 名前: #{monster_name}"
       [monster_no_trim, monster_name]
