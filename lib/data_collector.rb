@@ -36,19 +36,7 @@ class DataCollector
     doc.xpath("//ul[contains(@class,'list-box')]").each do |node|
       node.xpath('li//a').each do |a_tag_node|
         monster_no_trim, monster_name = extract_monster_detail_link(a_tag_node)
-        next if Monster.find_by(uid: monster_no_trim)
-        # TODO: dummy skill (remove!!!)
-        Skill.first_or_create!(id: 1, name: :hoge)
-        # TODO: element and species is dummy!!!!
-        m = Monster.new(
-          uid: monster_no_trim,
-          name: monster_name,
-          skill_id: 1,
-          element_id: 1,
-          sub_element_id: 2,
-          monster_species_id: 1
-        )
-        m.save!
+        update_monster(monster_no_trim, monster_name)
       end
     end
   end
@@ -65,4 +53,14 @@ class DataCollector
     [monster_no_trim, monster_name]
   end
   private_class_method :extract_monster_detail_link
+
+  def self.update_monster(monster_no_trim, monster_name)
+    m = Monster.find_or_create_by(uid: monster_no_trim)
+    Skill.first_or_create!(id: 1, name: :hoge) # TODO: dummy
+    m.update!(
+      uid: monster_no_trim, name: monster_name,
+      skill_id: 1, element_id: 1, sub_element_id: 2, monster_species_id: 1
+    ) # TODO: element and species is dummy!!!!
+  end
+  private_class_method :update_monster
 end
