@@ -1,4 +1,5 @@
 class ScrapingTarget
+  # モンスター一覧ページの解析を担う
   class MonsterListPage < ScrapingTarget
     def scraping
       return if last_scraping_at.present? && last_scraping_at > 1.day.ago
