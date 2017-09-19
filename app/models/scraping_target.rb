@@ -1,8 +1,13 @@
+# frozen_string_literal: true
 require 'nokogiri'
 require 'open-uri'
 
 class ScrapingTarget < ApplicationRecord
   SITE_BASE_URL = 'http://pd.appbank.net'.freeze
+
+  def scraping
+    fail NotImplementedError, 'please implement scraping!!'
+  end
 
   private
 
