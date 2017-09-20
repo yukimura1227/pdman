@@ -4,5 +4,6 @@ class DataCollector
       ScrapingTarget::MonsterListPage.where(url: default_url).first_or_create
     end
     ScrapingTarget::MonsterListPage.all.each(&:scraping)
+    ScrapingTarget::MonsterDetailPage.all.each(&:scraping)
   end
 end
