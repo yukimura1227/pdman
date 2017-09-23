@@ -42,7 +42,7 @@ class ScrapingTarget
       monster_name =
         a_tag.xpath("div[contains(@class,'name')]").first.inner_html
       page.update(link_name: "#{monster_no} #{monster_name}")
-      puts "遷移先： #{href} モンスターNo: #{monster_no} 名前: #{monster_name}"
+      logger.info "遷移先： #{href} モンスターNo: #{monster_no} 名前: #{monster_name}"
       [monster_no_trim, monster_name]
     end
 

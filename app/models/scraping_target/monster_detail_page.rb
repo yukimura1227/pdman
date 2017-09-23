@@ -21,7 +21,7 @@ class ScrapingTarget
       monster_types_tag =
         monster_types_area_div.xpath("p[contains(@class, 'icon-mtype')]").first
       monster_types_tag.xpath('a').each do |node|
-        puts node.inner_html
+        logger.debug node.inner_html
       end
       update_monster(uid, name)
     end
