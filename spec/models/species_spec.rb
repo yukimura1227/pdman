@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Species, type: :model do
   describe 'Associations' do
     it { is_expected.to have_many(:monster_species) }
+    it { is_expected.to have_many(:monsters).through(:monster_species) }
   end
   describe 'Attribute records' do
     it do
