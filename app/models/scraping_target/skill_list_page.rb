@@ -16,17 +16,24 @@ class ScrapingTarget
     private
 
     def extract_skill_list_page(doc)
-      list_item_uls = doc.xpath("//ul[contains(@class, 'list-item')]")
-      list_item_uls.each do |ul_tag|
+      doc.xpath("//ul[contains(@class, 'list-item')]").each do |ul_tag|
         ul_tag.xpath('li').each do |li_tag|
-          a_tag_node = li_tag.xpath('a').first
+          a_tag_node = detect_a_tag_for_skill(li_tag)
           next if a_tag_node.blank?
-          next unless a_tag_node[:href].start_with?('/skill')
           page = ScrapingTarget::SkillDetailPage.where(
             url: a_tag_node[:href]
           ).first_or_create
           page.update(link_name: a_tag_node.inner_html)
         end
+      end
+    end
+
+    def detect_a_tag_for_skill(li_tag_node)
+      a_tag_node = li_tag_node.xpath('a').first
+      if a_tag_node.present? && a_tag_node[:href].start_with?('/skill')
+        return a_tag_node
+      else
+        return
       end
     end
   end
