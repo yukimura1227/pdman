@@ -2,6 +2,7 @@
 require 'nokogiri'
 require 'open-uri'
 
+# あるページをスクレイピングするための基底クラス
 class ScrapingTarget < ApplicationRecord
   SITE_BASE_URL = 'http://pd.appbank.net'.freeze
 
