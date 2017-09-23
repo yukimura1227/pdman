@@ -13,4 +13,7 @@ FactoryGirl.define do
   factory :monster_detail_page, parent: :scraping_target, class: 'ScrapingTarget::MonsterDetailPage' do
     type 'ScrapingTarget::MonsterDetailPage'
   end
+  factory :skill_list_page, parent: :scraping_target, class: 'ScrapingTarget::SkillListPage' do
+    type 'ScrapingTarget::SkillListPage'
+  end
 end

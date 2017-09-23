@@ -1,45 +1,33 @@
+# frozen_string_literal: true
+
 class ScrapingTarget
   # スキル一覧ページの解析を担う
-  class MonsterDetailPage < ScrapingTarget
+  class SkillListPage < ScrapingTarget
+    DEFAULT_URL = '/skill/list'.freeze
     def scraping
       return if last_scraping_at.present? && last_scraping_at > 1.day.ago
       sleep 1
       update(last_scraping_at: Time.zone.now, is_success_last: false)
       doc = parse_target
-      extract_monster_detail_page(doc)
+      extract_skill_list_page(doc)
       update(is_success_last: true)
     end
 
     private
 
-    def extract_monster_detail_page(doc)
-      monster_div = doc.xpath("//div[contains(@class, 'monster')]").first
-      monster_types_area_div =
-        monster_div.xpath("div[contains(@class, 'spacer')]").first
-      uid, name = extract_moster_id_an_name(monster_div)
-
-      monster_types_tag =
-        monster_types_area_div.xpath("p[contains(@class, 'icon-mtype')]").first
-      monster_types_tag.xpath('a').each do |node|
-        logger.debug node.inner_html
+    def extract_skill_list_page(doc)
+      list_item_uls = doc.xpath("//ul[contains(@class, 'list-item')]")
+      list_item_uls.each do |ul_tag|
+        ul_tag.xpath('li').each do |li_tag|
+          a_tag_node = li_tag.xpath('a').first
+          next if a_tag_node.blank?
+          next unless a_tag_node[:href].start_with?('/skill')
+          page = ScrapingTarget::SkillDetailPage.where(
+            url: a_tag_node[:href]
+          ).first_or_create
+          page.update(link_name: a_tag_node.inner_html)
+        end
       end
-      update_monster(uid, name)
-    end
-
-    def extract_moster_id_an_name(monster_div)
-      target =
-        monster_div.xpath("h2[contains(@class, 'title-bg')]").first.inner_html
-      /No\.(?<capture_uid>\d+)\s(?<capture_name>.+)/ =~ target
-      [capture_uid, capture_name]
-    end
-
-    def update_monster(uid, name)
-      m = Monster.find_or_initialize_by(uid: uid)
-      Skill.first_or_create!(id: 1, name: :hoge) # TODO: dummy
-      m.update!(
-        uid: uid, name: name,
-        skill_id: 1, element_id: 1, sub_element_id: 2, monster_species_id: 1
-      ) # TODO: element and species is dummy!!!!
     end
   end
 end
