@@ -1,3 +1,4 @@
+# モンスターの情報を管理するモデル
 class Monster < ApplicationRecord
   belongs_to :skill
   with_options class_name: 'Attribute' do
