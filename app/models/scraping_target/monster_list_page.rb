@@ -13,11 +13,6 @@ class ScrapingTarget
 
     private
 
-    def parse_target
-      html, charset = extract_html_and_charset(extract_target_url)
-      Nokogiri::HTML.parse(html, nil, charset)
-    end
-
     def extract_monster_list_pages(doc)
       doc.xpath("//ul[contains(@class,'list-round-rect')]").each do |node|
         node.xpath('li//a').each do |a_tag_node|

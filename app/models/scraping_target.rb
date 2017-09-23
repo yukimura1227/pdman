@@ -11,6 +11,11 @@ class ScrapingTarget < ApplicationRecord
 
   private
 
+  def parse_target
+    html, charset = extract_html_and_charset(extract_target_url)
+    Nokogiri::HTML.parse(html, nil, charset)
+  end
+
   def extract_target_url
     "#{SITE_BASE_URL}#{url}"
   end
